@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects, except: [:show]
-  get 'project/:id', to: 'project#show', as: 'project_show'
+  get 'project/:id', to: 'projects#show', as: 'project_show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
