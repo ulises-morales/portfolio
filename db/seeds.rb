@@ -18,9 +18,9 @@ end
 
 puts "5 skills created"
 
-9.times do | portfolio_item |
-  MyPortfolio.create!(
-    title: "Portfolio title #{portfolio_item}",
+9.times do | project |
+  Project.create!(
+    title: "Project title #{project}",
     subtitle: "My service",
     body: "Bacon ipsum dolor amet boudin hamburger tongue tenderloin picanha porchetta frankfurter corned beef tri-tip pork loin swine drumstick. Pastrami pork chop leberkas, shank flank sirloin ground round pork shankle meatball. Hamburger corned beef flank, ball tip strip steak pig salami brisket kevin andouille tenderloin.",
     main_image: "http://placehold.it/600x400",
@@ -28,4 +28,4 @@ puts "5 skills created"
   )
 end
 
-puts "9 portfolio items created"
+puts "9 projects created"
