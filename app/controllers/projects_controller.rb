@@ -3,6 +3,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def angular
+    @angular_projects = Project.angular
+  end
+
   def new
     @project = Project.new
   end
