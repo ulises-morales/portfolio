@@ -1,4 +1,8 @@
-<h1>Homepage</h1>
+<%  if current_user %>
+  <h1>Hi <%= current_user.first_name %></h1>
+<% else %>
+  <h1>Welcome</h1>
+<% end %>
 
 <h2>Blog Posts</h2>
 <%= @posts.inspect %>
