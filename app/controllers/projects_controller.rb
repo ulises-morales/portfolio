@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params.require(:project).permit(:title, :subtitle, :body))
+    @project = Project.new(project_params)
 
     respond_to do |format|
       if @project.save
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update(params.require(:project).permit(:title, :subtitle, :body))
+      if @project.update(project_params)
         format.html { redirect_to projects_path, notice: 'The record was successfully updated.' }
       else
         format.html { render :edit }
@@ -55,4 +55,14 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Record was removed.' }
     end
   end
+
+  private
+  def project_params
+    params.require(:project).permit(:title,
+                                    :subtitle,
+                                    :body,
+                                    technologies_attributes: [:name]
+                                   )
+  end
+
 end
